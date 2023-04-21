@@ -138,3 +138,5 @@ console.log(isLulus); // Output: true
 //catatan: value = [] adalah array, value = {} adalah object. keduanya akan dipelajari nanti.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+catatan bagian 2
