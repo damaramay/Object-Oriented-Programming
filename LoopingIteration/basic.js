@@ -69,7 +69,7 @@ while (i < 5) {
 {
     let i = 0;
 do {
-  console.log(i);
+  console.log(`ini iterasi do while ke-${i}`);
   i++;
 } while (i < 5)
 }
