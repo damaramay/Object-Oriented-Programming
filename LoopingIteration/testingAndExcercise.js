@@ -180,7 +180,7 @@
 // (2, 1)
 // (2, 2)
 
-{
+{ //ini lebih tepatnya kayak while trus dikasih do while
     let i = 0
     let j = 0
     while (i < 3){
@@ -188,30 +188,114 @@
             console.log(`lvl 4 do while (${i}), (${j})`)
             j++
         } while (j < 3)
+        j = 0
         i++
     }
+}
+//jawaban yang lebih mudah dimengerti versi chatGPT
+{
+    {
+        let i = 0;
+        let j = 0;
+        do {
+            do {
+                console.log(`(${i}, ${j})`);
+                j++;
+            } while (j < 3);
+            j = 0; // reset j ke 0 setelah loop bagian dalam selesai
+            i++;
+        } while (i < 3);
+    }
+    
 }
 
 // Level 5: Loop dengan penggunaan break dan continue
 // Buatlah sebuah program yang melakukan loop sebanyak 10 kali menggunakan do while loop, namun jika nomor iterasi tersebut merupakan bilangan genap, maka program akan melakukan continue, dan jika nomor iterasi tersebut merupakan bilangan ganjil, maka program akan mencetak pesan "Ini adalah iterasi ke-n", dimana n adalah nomor iterasi saat ini.
 
 {
-    let 
+    let index = 0
+    do {
+        if (index % 2 === 0) {
+            index++
+            continue; //harus dikasih continue agar dia jalan setelah dapet hasilnya. inget kenapa di continue karena ini pakenya do.
+        }
+        console.log(`lvl 5 do while. ini adalah iterasi ke-${index}`)
+        index++
+    } while (index < 10)
 }
 
 // For Of:
 
 // Level 1: Loop array sederhana
 // Buatlah sebuah program yang melakukan loop pada array [1, 2, 3, 4, 5] menggunakan for of dan mencetak setiap elemen array.
-
+{
+    let arr = [1, 2, 3, 4, 5]
+    // console.log(`ini arr: ${arr}`)
+    for (let x of arr){
+        console.log(`ini adalah isi dari iterasi array di x: ${x}`)
+    }
+}
 // Level 2: Loop array dengan object sebagai isinya
 // Buatlah sebuah program yang melakukan loop pada array [{name: "John", age: 25}, {name: "Jane", age: 30}, {name: "Bob", age: 35}] menggunakan for of dan mencetak setiap object beserta propertinya.
+{
+    let arrayOfObject = [{name: "John", age: 25}, {name: "Jane", age: 30}, {name: "Bob", age: 35}]
 
+    for (let objEach of arrayOfObject){
+        console.log(objEach)
+    }
+}
+//testing coba coba:
+{
+    let arrayOfObject = [{name: "John", age: 25}, {name: "Jane", age: 30}, {name: "Bob", age: 35}]
+
+    let tampung = []
+    for (let objEach of arrayOfObject){
+        objEach.Mobil = "honda"
+        tampung.push(objEach)
+    }
+    // console.log(tampung)
+    for (let keys of tampung){
+        if (keys.age <= 30){
+            keys.Mobil = `Problably lCGC`
+        }
+    }
+    console.log(tampung)
+}
 // Level 3: Loop array dengan operator break dan continue
 // Buatlah sebuah program yang melakukan loop pada array [1, 2, 3, 4, 5] menggunakan for of, namun jika elemen array tersebut merupakan bilangan genap, maka program akan melakukan continue, dan jika elemen array tersebut merupakan bilangan ganjil, maka program akan mencetak pesan "Ini adalah angka ganjil ke-n", dimana n adalah nomor urut elemen tersebut.
+
+{
+    let arr = [1, 2, 3, 4 ,5]
+    for (let value of arr){
+        if (value % 2 === 0){
+            continue;
+        }else {
+            console.log(`Ini adalah angka ganjil ke-${value}`)
+        }
+    }
+}
 
 // Level 4: Nested Loop (for of dalam for of)
 // Buatlah sebuah program yang melakukan nested loop pada array [[1, 2], [3, 4], [5, 6]] menggunakan for of dan mencetak setiap elemen pada array yang ada di dalamnya.
 
+{
+    let arrMult = [[1, 2], [3, 4], [5, 6]]
+    for (let value of arrMult){
+        for (let insideValue of value){
+            console.log(insideValue)
+        }
+    }
+}
+
 // Level 5: Loop array multidimensional
 // Buatlah sebuah program yang melakukan loop pada array [[1, 2, 3], [4, 5], [6, 7, 8, 9]] menggunakan for of dan mencetak setiap elemen pada array yang ada di dalamnya.
+
+{
+    let arr = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
+    for (let value of arr){
+        // console.log(value)
+        for (let insideValue of value){
+            console.log(insideValue)
+        }
+    }
+}
