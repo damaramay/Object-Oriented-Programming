@@ -299,3 +299,31 @@
         }
     }
 }
+
+// Level 1:
+
+// Buatlah sebuah fungsi yang menerima parameter sebuah objek dan menggunakan iterasi for...in untuk mencetak semua properti dari objek tersebut ke dalam konsol.
+{
+    let obj = {
+        nama : `damara`,
+        age : 26,
+        hobby : `tidur`            
+    }
+    for (let keys in obj){
+        console.log(obj[keys])
+    }
+}
+// Level 2:
+// 2. Buatlah sebuah program yang meminta user memasukkan data diri (nama, usia, dan jenis kelamin) dalam sebuah objek. Program tersebut kemudian menggunakan iterasi for...in untuk mencetak semua data yang dimasukkan oleh user ke dalam konsol.
+{
+  
+}
+
+// Level 3:
+// 3. Buatlah sebuah program yang menerima sebuah array yang berisi objek-objek mahasiswa (masing-masing objek memiliki properti nama dan nilai-nilai ujian). Program tersebut kemudian menggunakan iterasi for...in untuk mencetak nama dan nilai ujian dari setiap mahasiswa ke dalam konsol.
+
+// Level 4:
+// 4. Buatlah sebuah program yang menerima sebuah objek yang berisi daftar belanjaan (masing-masing properti objek adalah nama barang dan nilainya adalah harga barang tersebut). Program tersebut kemudian menggunakan iterasi for...in untuk menghitung total harga belanjaan dan mencetaknya ke dalam konsol.
+
+// Level 5:
+// 5. Buatlah sebuah program yang menerima sebuah array yang berisi objek-objek buah (masing-masing objek memiliki properti nama, harga, dan jumlah). Program tersebut kemudian menggunakan iterasi for...in untuk menghitung total harga dari semua buah yang ada dalam array dan mencetaknya ke dalam konsol.
