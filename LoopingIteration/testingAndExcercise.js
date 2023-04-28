@@ -316,14 +316,55 @@
 // Level 2:
 // 2. Buatlah sebuah program yang meminta user memasukkan data diri (nama, usia, dan jenis kelamin) dalam sebuah objek. Program tersebut kemudian menggunakan iterasi for...in untuk mencetak semua data yang dimasukkan oleh user ke dalam konsol.
 {
-  
+  let userInput = {nama : `zara`, age : 22, hobby: `nyetir`}
+  for (let value in userInput){
+  console.log(value + ' : ' + userInput[value])}
 }
 
 // Level 3:
 // 3. Buatlah sebuah program yang menerima sebuah array yang berisi objek-objek mahasiswa (masing-masing objek memiliki properti nama dan nilai-nilai ujian). Program tersebut kemudian menggunakan iterasi for...in untuk mencetak nama dan nilai ujian dari setiap mahasiswa ke dalam konsol.
 
+{
+    const mahasiswa = [
+        { nama: 'Andi', nilai: 80 },
+        { nama: 'Budi', nilai: 90 },
+        { nama: 'Cindy', nilai: 85 }
+      ];
+
+      for (let value in mahasiswa){
+        for (let keys in mahasiswa[value]){
+            console.log(keys + " : " + mahasiswa[value][keys])
+        }
+      }
+}
+
 // Level 4:
 // 4. Buatlah sebuah program yang menerima sebuah objek yang berisi daftar belanjaan (masing-masing properti objek adalah nama barang dan nilainya adalah harga barang tersebut). Program tersebut kemudian menggunakan iterasi for...in untuk menghitung total harga belanjaan dan mencetaknya ke dalam konsol.
 
+{
+    const daftarBelanja = [{nama : 'molto', harga : 2_500}, {nama : 'molto', harga : 2_500}, {nama : 'daia', harga : 3_500}, {nama : 'pingiwi', harga : 2_500}]
+
+    let totalBelanjaan = 0
+    for (let item in daftarBelanja){
+        // console.log(daftarBelanja[item].harga)
+        totalBelanjaan = totalBelanjaan + daftarBelanja[item].harga
+    }
+    console.log(totalBelanjaan)
+}
+
 // Level 5:
 // 5. Buatlah sebuah program yang menerima sebuah array yang berisi objek-objek buah (masing-masing objek memiliki properti nama, harga, dan jumlah). Program tersebut kemudian menggunakan iterasi for...in untuk menghitung total harga dari semua buah yang ada dalam array dan mencetaknya ke dalam konsol.
+
+{
+    let buahBuahan = [{nama : 'apel', harga: 1_000, jumlah: 2}, {nama: `pir`, harga: 2000, jumlah: 3}, {nama: 'melon', harga: 15000, jumlah: 1}
+    ]
+
+    
+    let jumlahHarga = 0 //nanti jumlahHarga = harga * jumlah buah
+    for (let value in buahBuahan){
+        // console.log(buahBuahan[value].jumlah)
+        jumlahHarga += buahBuahan[value].harga * buahBuahan[value].jumlah
+
+    }
+    console.log(jumlahHarga)
+}

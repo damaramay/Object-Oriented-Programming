@@ -1,0 +1,28 @@
+Semua tulisan masuk sini, tapi ini gaakan masuk ke repositories
+ss
+
+
+
+CATATAN TENTANG JSON
+Untuk mengakses isi file JSON, Anda bisa menggunakan JavaScript dengan memanfaatkan modul fs (file system) untuk membaca file tersebut, kemudian menggunakan fungsi JSON.parse() untuk mengubah string JSON menjadi objek JavaScript.
+
+Berikut adalah contoh penggunaannya:
+
+javascript
+Copy code
+const fs = require('fs')
+
+fs.readFile('testing.json', 'utf8', (err, data) => {
+  if (err) {
+    console.error(err)
+    return
+  }
+
+  const obj = JSON.parse(data)
+  console.log(obj)
+})
+Pada contoh di atas, pertama-tama kita memuat modul fs dengan menggunakan perintah require('fs'). Setelah itu, kita menggunakan fungsi fs.readFile() untuk membaca isi file testing.json dengan encoding utf8. Parameter kedua (encoding) adalah opsional, tetapi disarankan untuk digunakan agar isi file dapat dibaca dengan benar.
+
+Ketika fungsi fs.readFile() selesai dieksekusi, maka akan dipanggil fungsi callback yang menerima dua parameter, yaitu err dan data. Jika terjadi kesalahan saat membaca file, maka nilai err akan berisi pesan kesalahan yang dapat diakses. Jika tidak terjadi kesalahan, maka nilai data akan berisi isi file dalam bentuk string.
+
+Kita menggunakan fungsi JSON.parse() untuk mengubah string JSON di dalam data menjadi objek JavaScript. Setelah itu, kita mencetak objek tersebut ke dalam konsol menggunakan fungsi console.log(). Dalam contoh ini, hasil yang tercetak adalah array of object seperti ini:
