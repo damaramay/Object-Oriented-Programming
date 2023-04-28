@@ -16,3 +16,8 @@ Prerequisite:
 11. HTML
 12. CSS
 source: Hactiv8 / freecodecamp
+
+lanjutin: penjelasan tentang function. tipe tipe lain function
+penjelasan tentang object
+abis itu object oriented programming
+abis itu bikin repository baru untuk database
