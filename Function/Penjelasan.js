@@ -93,3 +93,162 @@ function faktorial(n) {
 }
 
 //Function Anonim
+// Anonim function adalah sebuah function dalam JavaScript yang tidak memiliki nama pada deklarasinya. Anonim function sering digunakan sebagai function yang akan dipanggil hanya satu kali atau sebagai parameter untuk function yang lain.
+
+// Berikut adalah contoh anonim function yang digunakan sebagai parameter untuk function setTimeout:
+{
+    setTimeout(function() {
+        console.log("Hello, world!");
+      }, 1000);      
+}
+
+//catatan: intinya kalau bingung function biasa pake nama
+//function namanya (param1, param2)
+//kalau function anonim gapake nama:
+//function(){statement}
+//function anonim jarang banget dipakai
+
+//ARROW FUNCTION
+// Arrow function adalah sebuah cara untuk menuliskan function dalam JavaScript yang lebih singkat dan mudah dibaca. Arrow function diperkenalkan pada ECMAScript 6 dan sejak saat itu menjadi fitur yang populer digunakan oleh para developer JavaScript.
+
+// Berikut adalah contoh penggunaan arrow function:
+{
+    const tambah = (a, b) => {
+        return a + b;
+      };
+      
+      console.log(tambah(5, 10)); // Output: 15
+      
+}
+
+// Pada contoh di atas, kita mendefinisikan sebuah function tambah dengan menggunakan arrow function. Parameter function dinyatakan dengan kurung () yang diikuti dengan tanda panah (=>) dan diikuti dengan blok kode function. Dalam function ini, kita mengembalikan hasil penjumlahan antara dua parameter a dan b. Kemudian kita memanggil function ini dengan memberikan dua argumen, yaitu 5 dan 10, dan menampilkan hasilnya pada konsol.
+
+// Perlu diperhatikan bahwa pada arrow function, tidak perlu menuliskan kata kunci function dan tanda kurung kurawal ({}) untuk mengelompokkan blok kode function, jika blok kode tersebut hanya berisi satu pernyataan. Sehingga, kode pada contoh di atas dapat dituliskan menjadi lebih singkat seperti berikut:
+
+{
+const tambah = (a, b) => a + b;
+
+console.log(tambah(5, 10)); // Output: 15
+
+}
+
+//latihan arrow function:
+// Buatlah sebuah arrow function dengan nama kaliDua yang menerima satu parameter dan mengembalikan hasil perkalian parameter tersebut dengan 2.
+
+{
+    let kaliDua = (a, b) => {return a * b}
+    console.log(kaliDua(2, 2))
+}
+
+// Buatlah sebuah arrow function dengan nama hitungPangkat yang menerima dua parameter, yaitu angka dan pangkat, dan mengembalikan hasil pangkat dari angka dengan nilai pangkat.
+
+{
+    let hitungPangkat = (a) => {
+        if (a === undefined){
+            return hitungPangkat(1)
+        }
+        return a * a
+    }
+    console.log(hitungPangkat(12))
+}
+
+// Buatlah sebuah arrow function dengan nama cekBilanganPrima yang menerima satu parameter bilangan bulat positif dan mengembalikan nilai true jika bilangan tersebut merupakan bilangan prima dan false jika bukan.
+
+{
+    const cekBilanganPrima = (bilangan) => {
+        // Jika bilangan kurang dari 2, bukan bilangan prima
+        if (bilangan < 2) {
+          return false;
+        }
+        
+        // Periksa apakah bilangan habis dibagi selain dengan 1 dan bilangan itu sendiri
+        for (let i = 2; i < bilangan; i++) {
+          if (bilangan % i === 0) {
+            return false;
+          }
+        }
+        
+        // Jika bilangan melewati dua kondisi di atas, maka bilangan prima
+        return true;
+      }
+      
+      console.log(cekBilanganPrima(4)); // false
+      console.log(cekBilanganPrima(7)); // true
+//jawaban bener      
+}
+
+/////////////////////////////////////////////////////////////////////////
+//REST PARAMETER
+// Rest parameter adalah fitur pada JavaScript yang memungkinkan kita untuk mengirim sejumlah argumen ke dalam sebuah fungsi sebagai sebuah array. Rest parameter ditandai dengan menggunakan tiga titik (...), diikuti dengan nama variabel yang akan menampung nilai-nilai dari argumen yang dikirimkan.
+
+// Contoh penggunaan rest parameter:
+{
+    function jumlahkan(...angka) {
+        let total = 0;
+        for (const a of angka) {
+          total += a;
+        }
+        return total;
+      }
+      
+      console.log(jumlahkan(1, 2, 3)); // Output: 6
+      console.log(jumlahkan(1, 2, 3, 4, 5)); // Output: 15
+      console.log(jumlahkan(1, 2)); // Output: 3
+      
+}
+
+// Pada contoh di atas, rest parameter digunakan untuk mengumpulkan semua nilai argumen yang dikirimkan ke dalam sebuah array angka. Kemudian, kita bisa melakukan operasi apapun pada array tersebut seperti pada contoh di atas, di mana kita menjumlahkan semua elemen pada array angka.
+
+
+//contoh soal:
+// Buatlah sebuah arrow function dengan nama jumlahkan yang menerima sebuah array angka dan mengembalikan hasil penjumlahan dari seluruh angka dalam array tersebut.
+
+{
+    let jumlahkan = (...angka) => {
+        let total = 0
+        for (let value of angka){
+            total += value
+        }
+        return total
+    }
+     console.log(jumlahkan(1, 2, 3)); // Output: 6
+      console.log(jumlahkan(1, 2, 3, 4, 5)); // Output: 15
+      console.log(jumlahkan(1, 2)); // Output: 3
+}
+
+// Buatlah sebuah arrow function dengan nama filterGanjil yang menerima sebuah array angka dan mengembalikan array baru yang hanya berisi angka-angka ganjil dari array input tersebut.
+
+{
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    function filterGanjil (param1) {
+    let arrBaru = []
+    for (let value of param1){
+        // console.log(`testing ` + value)
+        if (value % 3 === 0){
+            arrBaru.push(value)
+        }
+    }
+    return arrBaru
+}
+console.log(filterGanjil(arr))
+
+//versi arrow function:
+{
+    let filterGanjil = (array) => {
+        let arrayBaru = []
+        for (let value of array){
+            if (value % 3 === 0){
+                arrayBaru.push(value)
+            }
+        }
+        return arrayBaru
+    }
+    console.log(filterGanjil([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+
+
+    let varBaru = [1293, 2139, 29299, 130]
+
+    console.log(filterGanjil(varBaru))
+}
+}

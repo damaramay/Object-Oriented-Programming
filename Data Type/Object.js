@@ -29,7 +29,7 @@ console.log(mahasiswa.alamat.jalan); // Output: 'Jl. Puri Indah'
 console.log(mahasiswa['umur']); // Output: 21
 console.log(mahasiswa.mataKuliah[0]); // Output: 'Web Programming'
 
-//contoh yang diberikan ini sudah sangat ringkat. perhatikan tipe tipe data yang ada di dalam object tersebut ya
+//contoh yang diberikan ini sudah sangat ringkas. perhatikan tipe tipe data yang ada di dalam object tersebut ya
 
 //testing ground:
 
@@ -39,7 +39,7 @@ console.log(mahasiswa[`nama`]) //hasilnya sama kayak .nama
 /*
 berikut ini adalah beberapa hal yang juga harus dimengerti tentang object.
 
-Property: Seperti yang sudah dijelaskan sebelumnya, properti adalah pasangan key-value dalam sebuah objek.
+Property: Seperti yang sudah dijelaskan sebelumnya, properti adalah pasangan key-value dalam sebuah objek. Cara mengaksesnya juga sudah dijelaskan diatas ya.
 
 Method: Method adalah fungsi yang terdapat dalam sebuah objek. Method dapat diakses dan digunakan untuk memanipulasi nilai properti pada objek tersebut.
 
@@ -77,4 +77,33 @@ JSON: JSON atau JavaScript Object Notation adalah format data yang digunakan unt
   mobil.hidupkanMesin(); // Output: "Mesin mobil dinyalakan"
   mobil.matikanMesin(); // Output: "Mesin mobil dimatikan"
 } 
+//penjelasan: 
+//dalam object tidak hanya bisa membawa array atau object juga di dalamnya. tapi juga bisa membawa function juga. cara nyalain functionnya adalah dipanggil seperti ngambil isi dari object.
+
+//nantinya method akan bisa dipakai juga di class.
+
+/////////////////////////////////////////////////////////////////////////
+//CONSTRUCTOR
+/*
+Constructor adalah sebuah fungsi khusus dalam sebuah objek yang digunakan untuk menginisialisasi objek yang baru dibuat. Fungsi constructor biasanya dinamai dengan nama yang sama seperti nama kelas objeknya.
+
+Dalam JavaScript, constructor biasanya dibuat dengan menggunakan fungsi constructor, yaitu sebuah fungsi biasa yang ditulis menggunakan kata kunci function. Pada fungsi constructor, properti dan method dapat ditambahkan ke objek dengan menggunakan this.
+
+Berikut ini contoh penggunaan constructor pada objek JavaScript:
+*/
+
+{
+  function Mahasiswa(nama, jurusan, ipk) {
+    this.nama = nama;
+    this.jurusan = jurusan;
+    this.ipk = ipk;
+    
+    this.tampilkanInfo = function() {
+      console.log("Nama: " + this.nama + ", Jurusan: " + this.jurusan + ", IPK: " + this.ipk);
+    }
+  }
+  
+  var andi = new Mahasiswa("Andi", "Teknik Informatika", 3.5);
+  andi.tampilkanInfo(); // output: Nama: Andi, Jurusan: Teknik Informatika, IPK: 3.5  
+}
 

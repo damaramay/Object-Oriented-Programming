@@ -1,0 +1,98 @@
+//SUPLEMENT. lecture: Willy
+///////////////////////////////////////////////////////////////
+/*
+use strict digunakan untuk membuat barisan code itu menjadi lebih
+kaku untuk digunakan.
+contohnya
+x = 10 tanpa pakai let dan const akan menjadi var
+namun dengan "use strict" nanti akan mengembalikan nilai error
+*/
+
+///////////////////////////////////////////////////////////////
+// 2. Let vs Const
+//let bisa diubah isi variablenya
+//const tidak bisa diubah isi variablenya
+//namun variable const untuk object dan array dapat dimanipulasi/dirubah isinya
+
+////////////////////////////////////////////////////////////// 
+/*
+3. FUNCTION
+Seperti yang telah dijelaskan di dalam folder function: nilai default berfungsi apabila tidak ada inputan dari variable ke fungsi.
+{
+    let arrowFunct = (a, b) => a + b
+    console.log(arrowFunct(10, 15)) output: 25
+    pakai ini jika hanya satu statement
+
+    contoh lain:
+
+    let discount = price => console.log(price - 25000)
+    discount(50000)
+    output: 25_000
+}
+*/
+//forEach
+{
+    let arr = [1,2,'lah',4,5]
+    for (let i = 0; i < arr.length; i++){
+        let index = arr[i]
+        console.log(index)
+    }
+    
+    //sekarang pakai foreach
+
+    arr.forEach((param1, param2, param3) => {
+        console.log(param1 + ' ' + param2 + ' ' + param3)
+    })
+
+//dari awalan arr.forEach(), di parameter dimasukin arrow function tanpa nama. ini juga disebut dengan anonimus function
+//forEach hanya untuk array
+}
+
+////////////////////////////////////////////////////////////// 
+//4. 3 Map() tidak mengubah array lama dan membuat array yang baru
+{
+    let arr = [1,2,'lah',4,5]
+
+    let variable = arr.map((el) => {
+        return el * 2
+    })
+    console.log(variable)
+    
+    ///contoh chatGPT
+    {
+        const data = [
+        { name: 'John', age: 25 },
+        { name: 'Sarah', age: 30 },
+        { name: 'Mike', age: 20 }
+      ];
+      
+      const newData = data.map(person => {
+        return {
+          ...person, // spread the existing properties of the object
+          age: person.age + 5 // update the age property by adding 5
+        }
+      });
+      
+      console.log(newData);
+      }
+
+      {
+        const damara = [{
+            age : 25,
+            hobby : 'melukis',
+            jurusan : 'sastra Jepang'
+        }]
+
+        let newDamara = damara.map(value => {
+            return {...value, jurusan : damara.age = 'Hactiv8'}
+        })
+        
+        console.log(newDamara)
+      }
+
+      //latihan lagi
+
+      {
+        
+      }
+}
