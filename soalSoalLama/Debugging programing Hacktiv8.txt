@@ -1,0 +1,7 @@
+if (typeof kata === 'string'){
+    console.log(`username ${kata}`)
+}   else if (kata === 0){
+    console.log(`Invalid data`)
+}   else{
+    console.log(`age ${kata}`)
+}

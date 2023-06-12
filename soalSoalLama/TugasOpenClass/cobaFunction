@@ -1,0 +1,6 @@
+function dila(param1, param2){
+    let result = param1 * param2
+    return result
+}
+
+console.log(dila(2, 5))

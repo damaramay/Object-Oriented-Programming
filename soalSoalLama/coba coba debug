@@ -1,0 +1,62 @@
+// let kata = 0
+
+// if (typeof kata === 'string'){
+//     let string = kata
+//     console.log(`username ${kata}`)
+// }   else if (kata === 0){
+//     let zero = kata
+//     console.log(`Invalid data`)
+// }   else{
+//     let usia = kata
+//     console.log(`age ${usia}`)
+// }
+
+// let cobaCoba = ['damara', 'dila', 'raina', 'esa']
+// console.log(cobaCoba)
+
+// cobaCoba.push('ari lasso')
+// console.log(cobaCoba)
+
+// console.log(cobaCoba[2])
+
+// console.log(typeof cobaCoba)
+// console.log(cobaCoba === [])
+// console.log(Array.isArray(cobaCoba))
+
+
+const string = 'Blackpink in your area'
+// console.log(string.split('').reverse().join(''))
+console.log(
+    string
+    .split('')
+    .reverse()
+    .join('')
+    .split(' ')
+    .reverse()
+    .join(' ')
+)
+
+function split(str, separator) {
+}
+
+function reverse(arr) {
+    var reversedString = "";
+    for (var i = string.length - 1; i >= 0; i--) {
+        reversedString += string[i];
+    }
+    return reversedString;
+  }
+  console.log(reverse("Hello world!"))
+
+function join(arr, separator) {
+}
+
+function main(str) {
+}
+
+// console.log(main(string))
+// knipkcalB ni ruoy aera
+// console.log(main('Javascript is so cool'))
+// tpircsavaJ si os looc
+
+console.log(reverse)

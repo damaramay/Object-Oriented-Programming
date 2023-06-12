@@ -1,0 +1,21 @@
+// console.log('halo ini damara coba coding lagi')
+/*soal nomor 1
+Buatlah sebuah program yang menghasilkan output segitiga seperti di bawah ini:
+markdown
+Copy code
+*
+**
+***
+****
+***** */
+
+let s = ''
+for (let i = 0; i < 5; i++){
+    s += '*'
+    console.log(s)
+}/* output:
+ *
+ **
+ ***
+ ****
+*/ *****

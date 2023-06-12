@@ -1,0 +1,16 @@
+let nama = ['lisa', 'jeni', 'ayaka', 'mona', 'aulia']
+
+function Delete(arraynya, start, del){
+    let penampungArray = [];
+    let counter = 0
+    while (counter < arraynya.length){
+        if (counter <= start || counter > start + del){
+        penampungArray.push(arraynya[counter])
+        counter++
+    }else {
+        counter++
+    }
+    }
+    return penampungArray
+}
+console.log(Delete(nama, 1, 2))

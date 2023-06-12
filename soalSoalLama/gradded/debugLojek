@@ -1,0 +1,202 @@
+function splitData(drivers) {
+    //code here
+
+    let result = [];
+
+    for (let x = 0; x < drivers.length; x++) {
+        let perDriver = drivers[x];
+
+        let { groceries } = perDriver;
+        let keranjangPerDriver = [];
+
+        for (let y = 0; y < groceries.length; y++) {
+            let perBaris = groceries[y];
+
+            keranjangPerDriver.push(perBaris[0]);
+            keranjangPerDriver.push(perBaris[1]);
+        }
+        
+        result.push(keranjangPerDriver);
+        
+
+    }
+
+    return result;
+} // Done
+
+function calculateMoney(groceriesDrivers) {
+    let listGroceries = [
+        { name: "Susu", price: 10000 },
+        { name: "Roti", price: 20000 },
+        { name: "Mie", price: 5000 },
+        { name: "Telur", price: 7000 },
+        { name: "Sabun", price: 3000 },
+        { name: "Bakso", price: 25000 },
+    ];
+    //code here
+
+    let result = [];
+
+    for (let x = 0; x < groceriesDrivers.length; x++) {
+        let barangPerDriver = groceriesDrivers[x];
+
+        let totalBayar = 0; // Setiap ganti driver reset kembali ke 0
+
+        for (let y = 0; y < barangPerDriver.length; y += 2) {
+            let namaBarang = barangPerDriver[y];
+            let jumlahBarang = barangPerDriver[y + 1];
+
+            for (let z = 0; z < listGroceries.length; z++) {
+                let perObject = listGroceries[z];
+
+                let { name, price } = perObject;
+
+                if (namaBarang === name) {
+                    totalBayar += jumlahBarang * price;
+                    break;
+                }
+            }
+        }
+
+        // Selesai proses hitung bayarnya
+        result = totalBayar;
+
+    }
+
+    return result;
+}
+
+function calculateDistance(drivers) {
+    //code here
+
+    let result = [];
+
+    for (let x = 0; x < drivers.length; x++) {
+        let perDriver = drivers[x];
+
+        let { driveTime } = perDriver;
+
+        let kilometer = (driveTime * 500) / 1000;
+
+        result.push(kilometer);
+    }
+
+    return result;
+}
+
+function reward(data) {
+    //code here
+
+    let hasilSplit = splitData(data);
+    // console.log(hasilSplit)
+    let hasilMoney = calculateMoney(hasilSplit);
+    // console.log(hasilMoney)
+    let hasilCaculation = calculateDistance(data);
+    // console.log(hasilCaculation)
+
+    let result = {};
+
+    for (let x = 0; x < data.length; x++) {
+
+        let namaDriver = data[x].name;
+        console.log(namaDriver)
+        let uang = hasilMoney[x];
+        console.log(hasilMoney)
+        let jarak = hasilCaculation[x];
+        console.log(hasilCaculation)
+
+        let hadiah = "";
+
+        if (uang >= 100000 && jarak >= 50) {
+            hadiah = "Rumah";
+        } else if (
+            uang >= 50000 &&
+            uang <= 99999 &&
+            jarak >= 20 &&
+            jarak <= 49
+        ) {
+            hadiah = "Mobil";
+            
+        } else {
+            hadiah = "NoReward";
+        }
+        
+        if (!result[hadiah]) {
+            result[hadiah] = [];
+        }
+        result[hadiah].push(namaDriver);
+    }
+
+    return result;
+}
+
+console.log(
+    reward([
+        {
+            name: "Samir",
+            groceries: [
+                ["Susu", 2],
+                ["Roti", 4],
+                ["Mie", 2],
+            ],
+            driveTime: 134, //minutes,
+        },
+        {
+            name: "Eko",
+            groceries: [
+                ["Roti", 2],
+                ["Mie", 3],
+                ["Telur", 3],
+                ["Bakso", 2],
+            ],
+            driveTime: 110, //minutes,
+        },
+        {
+            name: "Fajrin",
+            groceries: [
+                ["Susu", 1],
+                ["Roti", 2],
+                ["Telur", 3],
+            ],
+            driveTime: 90, //minutes
+        },
+        {
+            name: "Abdullah",
+            groceries: [
+                ["Susu", 1],
+                ["Roti", 2],
+                ["Bakso", 5],
+            ],
+            driveTime: 120, //minutes,
+        },
+        {
+            name: "Basil",
+            groceries: [
+                ["Susu", 1],
+                ["Roti", 2],
+                ["Bakso", 2],
+                ["Telur", 5],
+            ],
+            driveTime: 50, //minutes
+        },
+        {
+            name: "Idaz",
+            groceries: [
+                ["Susu", 1],
+                ["Roti", 2],
+                ["Mie", 3],
+                ["Telur", 3],
+                ["Bakso", 1],
+            ],
+            driveTime: 100, //minutes
+        },
+    ])
+);
+
+/*
+  {
+    Rumah: [ 'Samir', 'Eko', 'Abdullah', 'Idaz' ],
+    Mobil: [ 'Fajrin' ],
+    NoReward: [ 'Basil' ]
+  }
+*/

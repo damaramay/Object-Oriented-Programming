@@ -5,35 +5,35 @@ Di dalam JavaScript, objek adalah struktur data yang berisi kumpulan pasangan ke
 Contohnya, berikut adalah sebuah objek dalam JavaScript yang mewakili seorang mahasiswa:
 */
 {
-    const mahasiswa = {
-        nama: 'John Doe',
-        umur: 21,
-        alamat: {
-          jalan: 'Jl. Puri Indah',
-          kota: 'Jakarta Barat'
-        },
-        mataKuliah: ['Web Programming', 'Database', 'Data Science']
-      };
-      console.log(mahasiswa) //outputnya akan object itu sendiri
-      //cara mengaksesn value adalah pakai dot notation (variable.key)
-      console.log(mahasiswa.nama)
-      //tampilkan (variable.key) output: value
+  const mahasiswa = {
+    nama: 'John Doe',
+    umur: 21,
+    alamat: {
+      jalan: 'Jl. Puri Indah',
+      kota: 'Jakarta Barat'
+    },
+    mataKuliah: ['Web Programming', 'Database', 'Data Science']
+  };
+  console.log(mahasiswa) //outputnya akan object itu sendiri
+  //cara mengaksesn value adalah pakai dot notation (variable.key)
+  console.log(mahasiswa.nama)
+  //tampilkan (variable.key) output: value
 
 
-//Objek mahasiswa memiliki empat properti yang terdiri dari nama, umur, alamat, dan mataKuliah. Properti alamat adalah objek lagi yang memiliki dua properti lagi di dalamnya yaitu jalan dan kota. Properti mataKuliah adalah array yang berisi tiga nilai string. Untuk mengakses nilai dari sebuah properti pada objek, kita bisa menggunakan notasi titik atau notasi kurung siku.
+  //Objek mahasiswa memiliki empat properti yang terdiri dari nama, umur, alamat, dan mataKuliah. Properti alamat adalah objek lagi yang memiliki dua properti lagi di dalamnya yaitu jalan dan kota. Properti mataKuliah adalah array yang berisi tiga nilai string. Untuk mengakses nilai dari sebuah properti pada objek, kita bisa menggunakan notasi titik atau notasi kurung siku.
 
-//contoh penggunaan:
+  //contoh penggunaan:
 
-console.log(mahasiswa.nama); // Output: 'John Doe'
-console.log(mahasiswa.alamat.jalan); // Output: 'Jl. Puri Indah'
-console.log(mahasiswa['umur']); // Output: 21
-console.log(mahasiswa.mataKuliah[0]); // Output: 'Web Programming'
+  console.log(mahasiswa.nama); // Output: 'John Doe'
+  console.log(mahasiswa.alamat.jalan); // Output: 'Jl. Puri Indah'
+  console.log(mahasiswa['umur']); // Output: 21
+  console.log(mahasiswa.mataKuliah[0]); // Output: 'Web Programming'
 
-//contoh yang diberikan ini sudah sangat ringkas. perhatikan tipe tipe data yang ada di dalam object tersebut ya
+  //contoh yang diberikan ini sudah sangat ringkas. perhatikan tipe tipe data yang ada di dalam object tersebut ya
 
-//testing ground:
+  //testing ground:
 
-console.log(mahasiswa[`nama`]) //hasilnya sama kayak .nama
+  console.log(mahasiswa[`nama`]) //hasilnya sama kayak .nama
 }
 
 /*
@@ -61,22 +61,22 @@ JSON: JSON atau JavaScript Object Notation adalah format data yang digunakan unt
 
 // Contoh penggunaan method pada objek adalah sebagai berikut:
 {
-    const mobil = {
+  const mobil = {
     merek: 'Toyota',
     model: 'Avanza',
     tahun: 2018,
-    hidupkanMesin: function() {
+    hidupkanMesin: function () {
       console.log('Mesin mobil dinyalakan');
     },
-    matikanMesin: function() {
+    matikanMesin: function () {
       console.log('Mesin mobil dimatikan');
     }
   };
-  
+
   // Memanggil method pada objek mobil
   mobil.hidupkanMesin(); // Output: "Mesin mobil dinyalakan"
   mobil.matikanMesin(); // Output: "Mesin mobil dimatikan"
-} 
+}
 //penjelasan: 
 //dalam object tidak hanya bisa membawa array atau object juga di dalamnya. tapi juga bisa membawa function juga. cara nyalain functionnya adalah dipanggil seperti ngambil isi dari object.
 
@@ -97,12 +97,12 @@ Berikut ini contoh penggunaan constructor pada objek JavaScript:
     this.nama = nama;
     this.jurusan = jurusan;
     this.ipk = ipk;
-    
-    this.tampilkanInfo = function() {
+
+    this.tampilkanInfo = function () {
       console.log("Nama: " + this.nama + ", Jurusan: " + this.jurusan + ", IPK: " + this.ipk);
     }
   }
-  
+
   var andi = new Mahasiswa("Andi", "Teknik Informatika", 3.5);
   andi.tampilkanInfo(); // output: Nama: Andi, Jurusan: Teknik Informatika, IPK: 3.5  
 }

@@ -1,0 +1,23 @@
+let nama = ['anjing', 'babi', 'kelelawar', 'paus'] //pausnya ilang
+
+function input(add, string, indexnya, keempat){
+   let penampung = [] //ditambah index 0 yaitu anjing
+   let counter = 0
+    while (counter < add.length + 1){
+        if (counter === indexnya){
+            penampung.push(string)
+            counter++
+        }
+        else if (counter > indexnya){
+            penampung.push(add[counter - 1])
+            counter++
+        }
+        
+        else {penampung.push(add[counter]) 
+            counter++
+        }
+        
+    }return penampung
+}
+console.log(input(nama, 'siput', 4))
+// console.log(input(['aku', 'kamu'], 'dia', 1))

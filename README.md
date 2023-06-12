@@ -18,7 +18,14 @@ Prerequisite:
 13. CSS
 source: Hactiv8 / freecodecamp
 
-lanjutin: penjelasan tentang function. tipe tipe lain function
-penjelasan tentang object
-abis itu object oriented programming
-abis itu bikin repository baru untuk database
+Current Task:
+buat stuktur untuk ngulang phase 1
+
+Summary Week1:
+    1. debugging & Supplement
+    2. 
+    3.
+    4.
+    5.
+Summary Database
+

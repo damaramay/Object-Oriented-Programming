@@ -1,0 +1,114 @@
+// function splice(data, add, start, del) {
+//     // Insert your code here
+//     // console.log(data, add, start, del);
+
+//     let result = [];
+
+//     if (!data || !Array.isArray(data)) {
+//         return result;
+//     }
+
+//     if (!start) {
+//         start = 0;
+//     }
+
+//     if (!del) {
+//         del = 0;
+//     }
+    
+
+//     let x = 0;
+
+//     while (x < data.lenght) {
+//         if (x === start) { // posisi sm start
+//             result.push(add); // Kita masukan data yang di minta
+
+//             if (del === 0) { // Jika tidak mau delete
+//                 result.push(data[x]); // Masukan data selanjutnya
+//             } else { // Jika deletenya ada isinya
+//                 x = del; // Kita bisa ubah index ke delete (kita skip data yang sebelumnya)
+//             }
+//         } else {
+//             result.push(data[x]);
+//         }
+
+//         x++;
+        
+//     }
+//     return result;
+    
+// }
+
+// // Test case: hasil seharusnya setelah function benar
+// console.log(splice(['idaz', 'fajrin', 'samir'], 'anggara', 1, 2))
+// // [ 'idaz', 'anggara' ]
+// console.log(splice(['eko', 'basil', 'abdullah', 'dear'], 'idaz', 3, 0))
+// // [ 'eko', 'basil', 'abdullah', 'idaz', 'dear' ]
+// console.log(splice([100, 200, 300], '150', 1, 0))
+// // [ 100, '150', 200, 300 ]
+// console.log(splice(['anggara'], 'idaz'))
+// // [ 'idaz', 'anggara' ]
+// console.log(splice(['aku', 'kamu'], 'dia', 1))
+// // [ 'aku', 'dia', 'kamu' ]
+
+
+function splice(data, add, start, del) {
+    // Insert your code here
+    // console.log(data, add, start, del);
+
+    let result = [];
+
+    if (!data || !Array.isArray(data)) {
+        return result;
+    }
+
+    if (!start) {
+        start = 0;
+    }
+
+    if (!del) {
+        del = 0;
+    }
+
+    let x = 0;
+
+    while (x < data.length) {
+        if (data.length % `3`){
+            return result;
+        }
+        if (x === start) { // posisi sm start
+            result.push(add); // Kita masukan data yang di minta
+
+            if (del === 0) { // Jika tidak mau delete
+                result.push(data[x]); // Masukan data selanjutnya
+            } else { // Jika deletenya ada isinya
+                x += del - 1; // Kita bisa ubah index ke delete (kita skip data yang sebelumnya)
+            }
+        } else {
+            result.push(data[x]);
+        }
+
+        x++;
+    }
+
+    return result;
+}
+
+// Test case: fitur tambahan!
+// Tambahkan kondisi hanya data yang jumlahnya ganjil saja baru fungsinya bisa berjalan
+// Selain itu fungsi tidak akan berjalan
+
+console.log(splice(['idaz', 'fajrin', 'samir'], 'anggara', 1, 2))
+// [ 'idaz', 'anggara' ]
+console.log(splice(['eko', 'basil', 'abdullah', 'dear'], 'idaz', 3, 0))
+// []
+console.log(splice([100, 200, 300], '150', 1, 0))
+// [ 100, '150', 200, 300 ]
+console.log(splice(['anggara'], 'idaz'))
+// [ 'idaz', 'anggara' ]
+console.log(splice(['aku', 'kamu'], 'dia', 1))
+// []
+console.log(splice('aku', 'dia'))
+// []
+console.log(splice())
+// []

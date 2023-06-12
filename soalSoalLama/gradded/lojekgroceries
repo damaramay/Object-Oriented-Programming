@@ -1,0 +1,37 @@
+function calculateMoney(groceriesDrivers) {
+    let listGroceries = [    { name: "Susu", price: 10000 },    { name: "Roti", price: 20000 },    { name: "Mie", price: 5000 },    { name: "Telur", price: 7000 },    { name: "Sabun", price: 3000 },    { name: "Bakso", price: 25000 },  ];
+  
+    let output = [];
+  
+    for (let i = 0; i < groceriesDrivers.length; i++) {
+      let totalCost = 0;
+  
+      for (let j = 0; j < groceriesDrivers[i].length; j += 2) {
+        let belanjaan = groceriesDrivers[i][j];
+        let banyaknya = groceriesDrivers[i][j + 1];
+  
+        for (let k = 0; k < listGroceries.length; k++) {
+          if (listGroceries[k].name === belanjaan) {
+            totalCost += listGroceries[k].price * banyaknya;
+            break;
+          }
+        }
+      }
+  
+      output.push(totalCost);
+    }
+  
+    return output;
+  }
+  
+  console.log(
+    calculateMoney([    ["Susu", 3, "Roti", 4, "Mie", 5, "Telur", 2, "Bakso", 1],
+      ["Susu", 1, "Roti", 2, "Mie", 3, "Telur", 3, "Bakso", 2],
+    ])
+  );
+  
+  /*
+    expected output:
+  
+    [164000, 136000]
+  */

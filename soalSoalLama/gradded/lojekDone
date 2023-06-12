@@ -1,0 +1,156 @@
+function splitData(array) {
+  //code here
+  let output = [];
+  let perDriver = [];
+
+  for (const x of array) {
+    // output.push(x.groceries)
+    for (let y of x.groceries){
+      perDriver.push(y[0], y[1])
+      // console.log(perDriver)
+    }
+    output.push(perDriver)
+  //   output.push(['yaelah'])
+    perDriver = []
+  }
+  return output;
+}
+
+function calculateMoney(groceriesDrivers) {
+  let listGroceries = [
+    { name: "Susu", price: 10000 },
+    { name: "Roti", price: 20000 },
+    { name: "Mie", price: 5000 },
+    { name: "Telur", price: 7000 },
+    { name: "Sabun", price: 3000 },
+    { name: "Bakso", price: 25000 },
+  ];
+  //code here
+  let output = [];
+  
+    for (let i = 0; i < groceriesDrivers.length; i++) {
+      let totalCost = 0;
+  
+      for (let j = 0; j < groceriesDrivers[i].length; j += 2) {
+        let belanjaan = groceriesDrivers[i][j];
+        let banyaknya = groceriesDrivers[i][j + 1];
+  
+        for (let k = 0; k < listGroceries.length; k++) {
+          if (listGroceries[k].name === belanjaan) {
+            totalCost += listGroceries[k].price * banyaknya;
+            break;
+          }
+        }
+      }
+  
+      output.push(totalCost);
+    }
+  
+    return output;
+}
+
+function calculateDistance(drivers) {
+  //code here
+  let distanceArr = [];
+  for (const driver of drivers) {
+    let distance = driver.driveTime / 2;
+    distanceArr.push(distance);
+  }
+  return distanceArr;
+}
+
+function reward(data) {
+  //code here
+  const output = {};
+  
+  function checkRewardLevel(nama, totalTransaksi, jarak) {
+    if (totalTransaksi >= 100000 && jarak >= 50) {
+      return "Rumah";
+    } else if (totalTransaksi >= 50000 && totalTransaksi < 100000 && jarak >= 20 && jarak < 50) {
+      return "Mobil";
+    } else {
+      return "NoReward";
+    }
+  }
+  
+  for (let i = 0; i < data.length; i++) {
+    const nama = data[i].name;
+    const split = splitData(data);
+    const totalTransaksi = calculateMoney(split);
+    const jarak = calculateDistance(data);
+    
+    const rewardLevel = checkRewardLevel(nama, totalTransaksi[i], jarak[i]);
+    
+    if (output[rewardLevel] === undefined) {
+      output[rewardLevel] = [];
+    }
+    output[rewardLevel].push(nama);
+  }
+  
+  return output;
+}
+
+
+
+console.log(reward([
+    {
+      name: "Samir",
+      groceries: [
+        ["Susu", 2],
+        ["Roti", 4],
+        ["Mie", 5],
+        ["Telur", 2],
+        ["Bakso", 1],
+      ],
+      driveTime: 134, //minutes,
+    },
+    {
+      name: "Eko",
+      groceries: [
+        ["Susu", 1],
+        ["Roti", 2],
+        ["Mie", 3],
+        ["Telur", 3],
+        ["Bakso", 2],
+      ],
+      driveTime: 134, //minutes,
+    },
+    {
+      name: "Fajrin",
+      groceries: [
+        ["Susu", 1],
+        ["Roti", 2],
+        ["Bakso", 2],
+        ["Telur", 3],
+      ],
+      driveTime: 90, //minutes
+    },
+    {
+      name: "Abdullah",
+      groceries: [
+        ["Susu", 1],
+        ["Roti", 2],
+        ["Bakso", 5],
+      ],
+      driveTime: 120, //minutes,
+    },
+    {
+      name: "Basil",
+      groceries: [
+        ["Susu", 1],
+        ["Roti", 2],
+        ["Bakso", 2],
+        ["Telur", 5],
+      ],
+      driveTime: 40, //minutes
+    },
+    {
+      name: "Idaz",
+      groceries: [
+        ["Susu", 1],
+        ["Roti", 2],
+      ],
+      driveTime: 10, //minutes
+    },
+  ])
+);
